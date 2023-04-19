@@ -1,0 +1,15 @@
+CREATE TABLE accounts (
+	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	id_agency INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+	balance DOUBLE NOT NULL
+);
+
+CREATE TABLE resumes (
+	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	account_id BIGINT NOT NULL,
+	type VARCHAR(255) NOT NULL,
+	amount DOUBLE NOT NULL,
+	balance DOUBLE NOT NULL,
+    FOREIGN KEY (account_id) REFERENCES accounts(id)
+);
